@@ -15,3 +15,7 @@ class TestPredictor(unittest.TestCase):
     def test_predict_if_pico_and_placa_applies_according_to_date(self):
         self.assertEqual(False,
                          self.predictor.predict_according_to_date("PKD-0921", "21/08/2023"))
+
+    def test_predict_if_pico_and_placa_applies_according_to_date_considering_holiday(self):
+        self.assertEqual(True,
+                         self.predictor.predict_according_to_date("PKD-0921", "02/01/2023"))
