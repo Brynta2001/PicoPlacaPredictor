@@ -15,4 +15,22 @@ class Predictor:
         return True
 
     def predict_according_to_date(self, license_plate, str_date):
-        pass
+        last_digit = self.return_last_digit(license_plate)
+        week_day = datetime.datetime.strptime(str_date, "%d/%m/%Y").date().weekday()
+        if week_day == 0:
+            if 1 <= last_digit <= 2:
+                return False
+        elif week_day == 1:
+            if 3 <= last_digit <= 4:
+                return False
+        elif week_day == 2:
+            if 5 <= last_digit <= 6:
+                return False
+        elif week_day == 3:
+            if 7 <= last_digit <= 8:
+                return False
+        elif week_day == 4:
+            if last_digit == 9 or last_digit == 0:
+                return False
+        return True
+
