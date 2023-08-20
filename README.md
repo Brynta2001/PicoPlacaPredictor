@@ -1,6 +1,15 @@
 # Pico&Placa Predictor
 This application allows you to determine whether or not a vehicle can circulate on the streets according to the Pico&Placa restriction in Quito. The code was generated in python using PyCharm IDE and can be executed through a console. For the entry, the license plate of the car, the date and time are received, and a message is returned indicating whether the vehicle can circulate or not.
 This program considers the holidays of the year 2023; however, it is possible to modify the code to take into account later years.
+Also, it is important to consider that the program uses the past Pico&Placa rules, which are:
+- Restricted hours in the morning: 7:00 - 9:30.
+- Restricted hours in the morning: 16:00 - 19:30.
+- Cars with license plates ending in 1 and 2 cannot circulate on Monday.
+- Cars with license plates ending in 3 and 4 cannot circulate on Tuesday.
+- Cars with license plates ending in 5 and 6 cannot circulate on Wednesday.
+- Cars with license plates ending in 7 and 8 cannot circulate on Thursday.
+- Cars with license plates ending in 9 and 0 cannot circulate on Friday.
+- Cars can circulate freely on holidays and weekends.
 
 
 ## Installation
