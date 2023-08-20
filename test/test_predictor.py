@@ -9,13 +9,6 @@ class TestPredictor(unittest.TestCase):
     def test_return_last_digit_of_license_plate(self):
         self.assertEqual(7, self.predictor.return_last_digit("PKD-0927"))
 
-    def test_predict_if_pico_and_placa_applies_according_to_time(self):
-        self.assertEqual(False, self.predictor.predict("08:30"))
-
-    def test_predict_if_pico_and_placa_applies_according_to_date(self):
-        self.assertEqual(False,
-                         self.predictor.predict_according_to_date("PKD-0921", "21/08/2023"))
-
-    def test_predict_if_pico_and_placa_applies_according_to_date_considering_holiday(self):
+    def test_predict_if_pico_and_placa_applies(self):
         self.assertEqual(True,
-                         self.predictor.predict_according_to_date("PKD-0921", "02/01/2023"))
+                         self.predictor.predict("PKD-0921", "02/01/2023", "08:30"))

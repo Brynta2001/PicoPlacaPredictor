@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 
 from src.schedule import ScheduleTime
 from src.schedule import Holiday
@@ -8,22 +8,23 @@ class Predictor:
     def return_last_digit(self, license_plate):
         return int(license_plate[-1])
 
-    def predict(self, str_time):
-        time = datetime.datetime.strptime(str_time, "%H:%M").time()
-        if (ScheduleTime.TIME_MORNING_START.value <= time <= ScheduleTime.TIME_MORNING_END.value or
-                ScheduleTime.TIME_AFTERNOON_START.value <= time <= ScheduleTime.TIME_AFTERNOON_END.value):
-            return False
-        return True
-
-    def predict_according_to_date(self, license_plate, str_date):
+    def predict(self, license_plate, str_date, str_time):
+        time = datetime.strptime(str_time, "%H:%M").time()
         last_digit = self.return_last_digit(license_plate)
-        date = datetime.datetime.strptime(str_date, "%d/%m/%Y").date()
+        date = datetime.strptime(str_date, "%d/%m/%Y").date()
         week_day = date.weekday()
+
         # It verifies if the date is a holiday
         for holiday in Holiday:
             if date == holiday.value:
                 return True
 
+        # It verifies the time range
+        if (ScheduleTime.TIME_MORNING_START.value <= time <= ScheduleTime.TIME_MORNING_END.value or
+                ScheduleTime.TIME_AFTERNOON_START.value <= time <= ScheduleTime.TIME_AFTERNOON_END.value):
+            return False
+
+        # It verifies the day of the week
         if week_day == 0:
             if 1 <= last_digit <= 2:
                 return False
