@@ -12,8 +12,10 @@ The program does not require additional dependencies. To use it, it is only nece
 
 1. Execute the "main.py" file using a console or a python IDE.
 2. The console will ask you to enter the license plate, date and time separately.
-3. Enter the license plate, date and time with the specified formats.
-4. The console will display a message indicating whether the vehicle can circulate on the street or not.
+3. Enter the license plate like this: AAA-0999.
+4. Enter the date in this format: dd/mm/yyyy.
+5. Enter the time using 24H format: hh:mm.
+6. The console will display a message indicating whether the vehicle can circulate on the street or not.
 
 ## Modify the program to include holidays
 
@@ -34,6 +36,20 @@ class Holiday(Enum):
     QUITO_FOUNDATION = date(2023, 12, 4)
     CHRISTMAS = date(2023, 12, 25)
 ```
+
+
+## Test
+
+The code includes unit tests inside of the "tests" directory. You can run them with unittest library or pytest library.
+Here you have some important cases that you could use to test the "predictor" method, that is the most important method of the program.
+
+| License Plate |    Date    |  Time |  Can road |            Message           |
+| ------------- | ---------- | ----- | --------- | ---------------------------- |
+|   PKD-0927    | 20/08/2023 | 20:50 |   True    | The car can be on the road   |
+|   PKD-0921    | 07/08/2023 | 16:30 |   False   | The car can't be on the road |
+|   ABD-0921    | 02/01/2023 | 07:50 |   True    | The car can be on the road   |
+|   CDA-1429    | 18/08/2023 | 08:30 |   False   | The car can't be on the road |
+|   CDA-1429    | 18/08/2023 | 12:30 |   True    | The car can be on the road   |
 
 
 ## License
