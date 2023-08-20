@@ -15,3 +15,6 @@ class Validator:
             return True
         except ValueError:
             return False
+
+    def validate_license_plate_format(self, license_plate):
+        pass

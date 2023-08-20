@@ -12,3 +12,6 @@ class TestValidator(unittest.TestCase):
 
     def test_validate_time_format(self):
         self.assertEqual(True, self.validator.validate_time_format("08:30"))
+
+    def test_validate_license_plate_format(self):
+        self.assertEqual(True, self.validator.validate_license_plate_format("PKD-0927"))
