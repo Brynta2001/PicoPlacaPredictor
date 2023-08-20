@@ -1,5 +1,5 @@
 # Pico&Placa Predictor
-This application allows you to determine whether or not a vehicle can circulate on the streets according to the Pico&Placa restriction in Quito. The code is generated in python and can be used through a console. For the entry, the license plate of the car, the date and time are received, and a message is returned indicating whether the vehicle can circulate or not.
+This application allows you to determine whether or not a vehicle can circulate on the streets according to the Pico&Placa restriction in Quito. The code was generated in python using PyCharm IDE and can be executed through a console. For the entry, the license plate of the car, the date and time are received, and a message is returned indicating whether the vehicle can circulate or not.
 This program considers the holidays of the year 2023; however, it is possible to modify the code to take into account later years.
 
 
@@ -12,9 +12,9 @@ The program does not require additional dependencies. To use it, it is only nece
 
 1. Execute the "main.py" file using a console or a python IDE.
 2. The console will ask you to enter the license plate, date and time separately.
-3. Enter the license plate like this: AAA-0999.
-4. Enter the date in this format: dd/mm/yyyy.
-5. Enter the time using 24H format: hh:mm.
+3. Enter the date in this format: dd/mm/yyyy.
+4. Enter the time using 24H format: hh:mm.
+5. Enter the license plate like this: AAA-0999.
 6. The console will display a message indicating whether the vehicle can circulate on the street or not.
 
 ## Modify the program to include holidays
@@ -40,8 +40,8 @@ class Holiday(Enum):
 
 ## Test
 
-The code includes unit tests inside of the "tests" directory. You can run them with unittest library or pytest library.
-Here you have some important cases that you could use to test the "predictor" method, that is the most important method of the program.
+The code includes unit tests inside of the "tests" directory. You can run them with unittest library.
+Here you have some important cases that you could use to test the "predictor" method, or even the whole program.
 
 | License Plate |    Date    |  Time |  Can road |            Message           |
 | ------------- | ---------- | ----- | --------- | ---------------------------- |
@@ -50,6 +50,9 @@ Here you have some important cases that you could use to test the "predictor" me
 |   ABD-0921    | 02/01/2023 | 07:50 |   True    | The car can be on the road   |
 |   CDA-1429    | 18/08/2023 | 08:30 |   False   | The car can't be on the road |
 |   CDA-1429    | 18/08/2023 | 12:30 |   True    | The car can be on the road   |
+
+## Observations
+The project works on PyCharm; however, if you want to clone the repository and use it with Visual Studio Code there may be a problem with the packages, but it is only necessary to remove "src" in the "imports".
 
 
 ## License
