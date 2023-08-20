@@ -1,4 +1,5 @@
 from datetime import datetime
+import re
 
 
 class Validator:
@@ -17,4 +18,9 @@ class Validator:
             return False
 
     def validate_license_plate_format(self, license_plate):
-        pass
+        license_plate_pattern = re.compile('[A-Z]{3,3}-[0-9]{3,4}')
+
+        if license_plate_pattern.match(license_plate) is None:
+            return False
+        else:
+            return True
