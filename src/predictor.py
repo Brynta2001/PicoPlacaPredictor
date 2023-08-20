@@ -31,6 +31,7 @@ class Predictor:
         if self.is_holiday(date) or week_day_date in WEEKEND:
             return True
 
+        # It verifies if the car can road according to day of the week and time
         for WEEK_DAY in WEEK_DAYS:
             if week_day_date == WEEK_DAY:
                 if last_digit in WEEK_DAYS[WEEK_DAY]['last_digit']:
