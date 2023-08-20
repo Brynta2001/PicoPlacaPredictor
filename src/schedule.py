@@ -23,3 +23,14 @@ class Holiday(Enum):
     CUENCA_INDEPENDENCE = date(2023, 11, 3)
     QUITO_FOUNDATION = date(2023, 12, 4)
     CHRISTMAS = date(2023, 12, 25)
+
+
+WEEK_DAYS = {
+    0: {'last_digit': [1, 2]},
+    1: {'last_digit': [3, 4]},
+    2: {'last_digit': [5, 6]},
+    3: {'last_digit': [7, 8]},
+    4: {'last_digit': [9, 0]}
+}
+
+WEEKEND = [5, 6]
