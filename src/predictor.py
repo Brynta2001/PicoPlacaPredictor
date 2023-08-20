@@ -1,8 +1,8 @@
 from datetime import datetime
 
-from src.schedule import ScheduleTime, WEEKEND
-from src.schedule import Holiday
-from src.schedule import WEEK_DAYS
+from schedule import ScheduleTime, WEEKEND
+from schedule import Holiday
+from schedule import WEEK_DAYS
 
 
 class Predictor:

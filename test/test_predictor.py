@@ -15,7 +15,7 @@ class TestPredictor(unittest.TestCase):
         self.assertEqual(True, self.predictor.is_holiday(date(2023, 1, 2)))
 
     def test_is_in_time_range(self):
-        self.assertEqual(True, self.predictor.is_in_time_range(time(12,30)))
+        self.assertEqual(True, self.predictor.is_in_time_range(time(12, 30)))
 
     def test_predict_if_pico_and_placa_applies(self):
         self.assertEqual(True,

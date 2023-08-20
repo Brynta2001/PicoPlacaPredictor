@@ -1,7 +1,7 @@
 import sys
 
-from src.predictor import Predictor
-from src.validator import Validator
+from predictor import Predictor
+from validator import Validator
 
 validator = Validator()
 predictor = Predictor()
