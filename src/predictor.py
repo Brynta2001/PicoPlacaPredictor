@@ -1,6 +1,7 @@
 import datetime
 
 from src.schedule import ScheduleTime
+from src.schedule import Holiday
 
 
 class Predictor:
@@ -16,7 +17,13 @@ class Predictor:
 
     def predict_according_to_date(self, license_plate, str_date):
         last_digit = self.return_last_digit(license_plate)
-        week_day = datetime.datetime.strptime(str_date, "%d/%m/%Y").date().weekday()
+        date = datetime.datetime.strptime(str_date, "%d/%m/%Y").date()
+        week_day = date.weekday()
+        # It verifies if the date is a holiday
+        for holiday in Holiday:
+            if date == holiday.value:
+                return True
+
         if week_day == 0:
             if 1 <= last_digit <= 2:
                 return False
@@ -33,4 +40,3 @@ class Predictor:
             if last_digit == 9 or last_digit == 0:
                 return False
         return True
-
