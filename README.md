@@ -38,4 +38,5 @@ class Holiday(Enum):
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+Copyright (c) 2023 Bryan Tapia
+This project is [MIT](https://github.com/Brynta2001/PicoPlacaPredictor/blob/master/LICENSE) licensed.
