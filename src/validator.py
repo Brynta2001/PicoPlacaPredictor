@@ -10,4 +10,8 @@ class Validator:
             return False
 
     def validate_time_format(self, str_time):
-        pass
+        try:
+            datetime.strptime(str_time, "%H:%M")
+            return True
+        except ValueError:
+            return False
