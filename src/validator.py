@@ -8,3 +8,6 @@ class Validator:
             return True
         except ValueError:
             return False
+
+    def validate_time_format(self, str_time):
+        pass
